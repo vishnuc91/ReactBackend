@@ -13,6 +13,7 @@ class Bucket(models.Model):
 class Todo(models.Model):
     bucket = models.ForeignKey(Bucket, related_name="todo_bucket", on_delete=models.CASCADE)
     name = models.CharField("Todo", max_length=200)
+    details = models.TextField("Details")
     target = models.DateTimeField("Date TIme", null=True, blank=True)
     created_datetime = models.DateTimeField("Date TIme", default=datetime.datetime.now())
     completed = models.BooleanField(default=False)
